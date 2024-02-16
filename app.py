@@ -1,11 +1,11 @@
-import chromadb
+
 import os
 
 from  llama_index.core import SimpleDirectoryReader,VectorStoreIndex
 from llama_index.core import StorageContext
-from llama_index.vector_stores.chroma import ChromaVectorStore
 
-from flask import Flask, render_template, request
+
+from flask import Flask,  request
 
 
 openai_api_key=os.environ['OPENAI_API_KEY']
