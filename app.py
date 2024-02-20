@@ -67,7 +67,7 @@ def home():
 def get_bot_response():
   
     user_prompt = request.args.get('prompt')
-    user_query = 'Write a formal mail responding to the user with solution to the problem ' + user_prompt
+    user_query = f'Get the resolution for the Issue or Problem: {user_prompt} and then Compose the response in two parts Issue:   Resolution: ' 
     result = query_kb(index,user_query)
     return result
 if __name__ == "__main__":
