@@ -70,5 +70,19 @@ def get_bot_response():
     user_query = f'Get the resolution for the Issue or Problem: {user_prompt} and then Compose the response in two parts Issue:   Resolution: ' 
     result = query_kb(index,user_query)
     return result
+
+@app.route("/otp")
+def validate_otp():
+  
+    user_otp = request.args.get('otp')
+    user_query = f'Get the resolution for the Issue or Problem: {user_otp}  ' 
+    print(f"OTP :::::::::::: {user_query}")
+    if (user_otp==10001):
+        result = "Valid"
+    else:
+        result="Invalid"
+    return result
+
+
 if __name__ == "__main__":
     app.run()
