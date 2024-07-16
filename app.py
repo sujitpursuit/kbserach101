@@ -74,9 +74,11 @@ def get_bot_response():
 @app.route("/otp")
 def validate_otp():
   
-    user_otp = request.args.get('otp')
-    user_query = f'Get the resolution for the Issue or Problem: {user_otp}  ' 
+    user_otp_str = request.args.get('otp')
+    user_query = f'OTP received : {user_otp}  ' 
     print(f"OTP :::::::::::: {user_query}")
+    print(f'datatype of otp = {type(user_otp_str)}')
+    user_otp = int(user_otp_str)
     if (user_otp==10001):
         result = "Valid"
     else:
