@@ -75,7 +75,7 @@ def get_bot_response():
 def validate_otp():
   
     user_otp_str = request.args.get('otp')
-    user_query = f'OTP received : {user_otp}  ' 
+    user_query = f'OTP received : {user_otp_str}  ' 
     print(f"OTP :::::::::::: {user_query}")
     print(f'datatype of otp = {type(user_otp_str)}')
     user_otp = int(user_otp_str)
